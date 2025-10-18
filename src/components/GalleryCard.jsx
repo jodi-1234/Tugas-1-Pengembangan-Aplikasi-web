@@ -1,15 +1,21 @@
 import React from 'react'
 
-export default function GalleryCard({ image, title, category, description }) {
+export default function GalleryCard({ title, image, category, description, onDelete }) {
   return (
-    <div className="relative bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl hover:scale-105 transition-all duration-300">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all">
       <img src={image} alt={title} className="w-full h-48 object-cover" />
-      <div className="absolute top-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-        {category}
-      </div>
-      <div className="p-4 text-center">
-        <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-        <p className="text-gray-600 text-sm">{description}</p>
+      <div className="p-4">
+        <h3 className="font-bold text-lg mb-1">{title}</h3>
+        <p className="text-sm text-gray-600 mb-2">{description}</p>
+        <span className="inline-block px-2 py-1 text-xs bg-blue-100 text-blue-600 rounded-full">{category}</span>
+        {onDelete && (
+          <button
+            onClick={onDelete}
+            className="mt-3 block bg-red-500 text-white px-3 py-1 rounded-md text-sm hover:bg-red-600"
+          >
+            Hapus
+          </button>
+        )}
       </div>
     </div>
   )
