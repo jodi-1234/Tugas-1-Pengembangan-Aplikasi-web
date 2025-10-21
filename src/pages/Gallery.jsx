@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import GalleryCard from '../components/GalleryCard'
+import '../pages/Gallery.css'
 
 // IndexedDB setup
 const DB_NAME = 'my-gallery-db'
@@ -178,7 +179,7 @@ export default function Gallery() {
 
   return (
     <div className="page-wrap-alt">
-      <h1 className="page-heading">📸 Dashboard {username}</h1>
+      <h1 className="page-heading">Gallery {username}</h1>
 
       <div className="filter-wrap">
         {['All', 'Alam', 'Kota', 'Hewan'].map((cat) => (
@@ -190,13 +191,29 @@ export default function Gallery() {
             {cat}
           </button>
         ))}
-        <input
-          type="text"
-          placeholder="Cari gambar..."
-          className="search-bar"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
+        <div className="search-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="search-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#618264"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+
+          <input
+            type="text"
+            placeholder="Cari gambar..."
+            className="search-bar"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="gallery-grid">
@@ -206,7 +223,7 @@ export default function Gallery() {
       </div>
 
       <div className="info-card">
-        <h2 className="info-title">🖼️ Tambah Gambar Baru</h2>
+        <h2 className="info-title">Tambah Gambar Baru</h2>
         <div className="info-list">
           <div className="info-row">
             <label className="inline-flex">
@@ -256,12 +273,17 @@ export default function Gallery() {
           )}
 
           {uploadMethod === 'file' && (
-            <input
-              type="file"
-              accept="image/*"
-              className="w-full"
-              onChange={(e) => setFile(e.target.files[0])}
-            />
+            <div className="upload-btn-wrapper">
+              <label className="btn-upload">
+                📁 Pilih File Gambar
+                {file && <span className="file-name-inline"> — {file.name}</span>}
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
+              </label>
+            </div>
           )}
 
           <select
@@ -283,7 +305,7 @@ export default function Gallery() {
           />
 
           <button onClick={handleAddItem} className="btn-submit">
-            + Tambah ke Gallery
+            + Tambah Gambar
           </button>
         </div>
       </div>
