@@ -1,0 +1,180 @@
+/* ====== Import Font ====== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ====== Global ====== */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #111827;
+  background-color: #B0D9B1; /* warna latar hijau lembut memenuhi layar */
+}
+
+
+
+/* ====== Layout Halaman ====== */
+.page-wrap {
+  min-height: 100vh; /* memenuhi tinggi layar */
+  width: 100%;
+  background-color: #B0D9B1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ====== Judul Halaman ====== */
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  margin-left: 25%;
+}
+
+/* ====== Tombol ====== */
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-left: 25%;
+}
+
+.btn-add,
+.btn-delete {
+  background-color: #4B8673; /* hijau tua lembut serasi */
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add:hover,
+.btn-delete:hover {
+  background-color: #3C6F5F; /* lebih gelap saat hover */
+  transform: translateY(-2px);
+}
+
+/* ====== Pesan Kosong ====== */
+.empty-text {
+  text-align: center;
+  color: #6b7280;
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
+/* ====== Grid Kartu ====== */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: 25%;
+}
+
+/* ====== Kartu ====== */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  width: 260px; /* ukuran tetap */
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+/* ====== Gambar di Kartu ====== */
+.card-img {
+  width: 100%;
+  height: 200px; /* tinggi tetap */
+  object-fit: cover; /* proporsional, tidak gepeng */
+  object-position: center;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* ====== Placeholder Gambar ====== */
+.img-placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-style: italic;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* ====== Isi Kartu ====== */
+.card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.8rem;
+  flex: 1;
+}
+
+.card-tag {
+  display: inline-block;
+  background-color: #d8f3dc;
+  color: #4B8673;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+/* ====== Responsif ====== */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.4rem;
+  }
+
+  .btn-add,
+  .btn-delete {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+  }
+}

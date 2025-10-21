@@ -6,12 +6,27 @@
 =================================*/
 
 /* 🌿 Background utama halaman gallery */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* ✅ supaya tidak muncul scroll horizontal */
+}
+
 .page-wrap-alt {
   min-height: 100vh;
+  width: 100vw; /* ✅ penuh sampai tepi layar */
+  margin: 0;
+  padding: 3rem 0; /* atas & bawah saja biar konten tidak nempel */
+  box-sizing: border-box;
+  
+
   background: linear-gradient(to bottom, #D0E7D2, #B0D9B1);
-  padding: 2rem;
-  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
+
 
 /* 📸 Judul dashboard */
 .page-heading {
@@ -264,6 +279,10 @@ textarea {
   gap: 2rem;
   background-color: #618264;
   padding: 1rem 0;
+  width: 100vw;
+  margin: 0;
+  left: 0;
+  right:0;
   position: sticky;
   top: 0;
   z-index: 10;

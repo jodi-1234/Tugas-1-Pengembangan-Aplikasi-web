@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import "./about.css"
 
 const DB_NAME = 'my-gallery-db'
 const DB_STORE = 'files'
