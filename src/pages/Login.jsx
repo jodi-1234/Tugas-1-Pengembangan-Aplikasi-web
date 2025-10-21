@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Login.css'
 
-
 export default function Login({ setUsername }) {
   const [username, setInputUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -26,7 +25,6 @@ export default function Login({ setUsername }) {
       localStorage.setItem(`deleted_${trimmed}`, JSON.stringify([]))
     }
 
-    // Arahkan ke dashboard (password bebas)
     navigate('/dashboard')
   }
 
@@ -39,7 +37,7 @@ export default function Login({ setUsername }) {
       <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
-          placeholder="Masukkan username"
+          placeholder="Masukkan Username"
           className="login-input"
           value={username}
           onChange={(e) => setInputUsername(e.target.value)}
@@ -47,7 +45,7 @@ export default function Login({ setUsername }) {
 
         <input
           type="password"
-          placeholder="Masukkan password"
+          placeholder="Masukkan Password"
           className="login-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

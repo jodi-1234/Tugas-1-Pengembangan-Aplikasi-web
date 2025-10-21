@@ -4,17 +4,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom right, #f0f8ff, #e0f2ff);
-  width: 80%;
-  align-items: center;
+}
+
+body {
+  width: 100%;
 }
 
 img {
   transition: transform 0.3s ease;
-}
-
-img:hover {
-  transform: scale(1.05);
+  max-width: 100%;
+  display: block;
 }

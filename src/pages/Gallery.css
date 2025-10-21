@@ -1,34 +1,12 @@
-/* ===== 🎨 COLOR PALETTE =====
-   #618264 - Dark Green (utama)
-   #79AC78 - Medium Green
-   #B0D9B1 - Light Green
-   #D0E7D2 - Pale Green
-=================================*/
-
-/* 🌿 Background utama halaman gallery */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%; /* ✅ supaya tidak muncul scroll horizontal */
-}
-
+/*Background utama halaman gallery*/
 .page-wrap-alt {
   min-height: 100vh;
-  width: 100vw; /* ✅ penuh sampai tepi layar */
-  margin: 0;
-  padding: 3rem 0; /* atas & bawah saja biar konten tidak nempel */
-  box-sizing: border-box;
-  
-
   background: linear-gradient(to bottom, #D0E7D2, #B0D9B1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
 }
 
-
-/* 📸 Judul dashboard */
+/*Judul dashboard*/
 .page-heading {
   text-align: center;
   color: #618264;
@@ -37,17 +15,17 @@ html, body {
   margin-bottom: 2.5rem;
 }
 
-/* 🧭 Filter tombol + search bar */
+/*Filter button + search bar*/
 .filter-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 5px;
   margin-bottom: 2.5rem;
 }
 
-/* 🔘 Tombol filter */
+/* Button filter*/
 .filter-btn {
   background-color: #ffffff;
   border: 2px solid #79AC78;
@@ -69,7 +47,7 @@ html, body {
   border-color: #618264;
 }
 
-/* 🔍 Search bar */
+/*Search bar*/
 .search-bar {
   border: 2px solid #79AC78;
   border-radius: 9999px;
@@ -82,7 +60,7 @@ html, body {
   box-shadow: 0 0 0 3px #B0D9B1;
 }
 
-/* 🖼️ Grid gallery */
+/*Grid gallery*/
 .gallery-grid {
   display: grid;
   gap: 1.5rem;
@@ -91,14 +69,14 @@ html, body {
   margin: 0 auto;
 }
 
-/* 🧩 Kartu form tambah gambar */
+/* Card form tambah gambar*/
 .info-card {
   margin-top: 3rem;
   background-color: rgba(255, 255, 255, 0.95);
   box-shadow: 0 6px 12px rgba(97, 130, 100, 0.25);
   padding: 2.5rem 2rem;
   border-radius: 1.25rem;
-  max-width: 550px; /* 💡 dikurangi agar tidak terlalu lebar */
+  max-width: 550px;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -107,7 +85,7 @@ html, body {
   box-sizing: border-box;
 }
 
-/* 🖊️ Judul form */
+/*Judul form*/
 .info-title {
   color: #618264;
   font-weight: 700;
@@ -116,7 +94,7 @@ html, body {
   text-align: center;
 }
 
-/* 📋 Struktur form */
+/*Struktur form*/
 .info-list {
   display: flex;
   flex-direction: column;
@@ -124,12 +102,12 @@ html, body {
   align-items: center;
 }
 
-/* 🧾 Input box umum */
+/*Form inputan gambar*/
 .input-box,
 select,
 textarea {
   width: 100%;
-  max-width: 470px; /* 💡 biar sejajar dan tidak nempel ke pinggir */
+  max-width: 470px;
   padding: 0.85rem 1rem;
   border: 2px solid #B0D9B1;
   border-radius: 0.75rem;
@@ -149,7 +127,6 @@ textarea:focus {
   box-shadow: 0 0 0 3px #D0E7D2;
 }
 
-/* 🧭 Select box biar sama tinggi */
 select {
   appearance: none;
   background: #fff url("data:image/svg+xml;utf8,<svg fill='%23618264' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 1rem center;
@@ -157,14 +134,14 @@ select {
   padding-right: 2.5rem;
 }
 
-/* 📜 Textarea */
+/*Text area*/
 textarea {
   resize: vertical;
   min-height: 80px;
   max-height: 150px;
 }
 
-/* 🔘 Tombol submit */
+/*Button submit*/
 .btn-submit {
   background-color: #618264;
   color: white;
@@ -176,7 +153,7 @@ textarea {
   transition: all 0.3s ease;
   font-size: 1rem;
   width: 100%;
-  max-width: 470px; /* 💡 sejajar dengan input */
+  max-width: 470px;
   box-sizing: border-box;
 }
 
@@ -186,7 +163,7 @@ textarea {
   box-shadow: 0 4px 10px rgba(97, 130, 100, 0.25);
 }
 
-/* 🖊️ Judul form tambah */
+/*Judul form tambah*/
 .info-title {
   text-align: center;
   color: #618264;
@@ -195,14 +172,14 @@ textarea {
   margin-bottom: 1.5rem;
 }
 
-/* 📋 Struktur form tambah */
+/*Struktur form tambah*/
 .info-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-/* 🧾 Input box umum */
+/* Input box umum*/
 .input-box {
   width: 100%;
   padding: 0.8rem 1rem;
@@ -217,7 +194,7 @@ textarea {
   box-shadow: 0 0 0 3px #D0E7D2;
 }
 
-/* 🧠 Label radio dan row */
+/*Label radio dan row*/
 .info-row {
   display: flex;
   align-items: center;
@@ -235,7 +212,7 @@ textarea {
   margin-left: 0.5rem;
 }
 
-/* 🔘 Tombol submit */
+/*Button submit*/
 .btn-submit {
   background-color: #618264;
   color: white;
@@ -252,7 +229,6 @@ textarea {
   transform: translateY(-2px);
 }
 
-/* 🪄 Animasi lembut pada elemen muncul */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -271,7 +247,7 @@ textarea {
   animation: fadeInUp 0.6s ease;
 }
 
-/* ===== NAVBAR STYLE ===== */
+/*style navbar/route*/
 .nav-bar {
   display: flex;
   justify-content: center;
@@ -279,17 +255,13 @@ textarea {
   gap: 2rem;
   background-color: #618264;
   padding: 1rem 0;
-  width: 100vw;
-  margin: 0;
-  left: 0;
-  right:0;
   position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 🌿 Link di navbar */
+/*route di navbar*/
 .nav-link {
   color: #D0E7D2;
   font-weight: 600;
@@ -318,7 +290,7 @@ textarea {
   transform-origin: left;
 }
 
-/* 🔴 Tombol Logout */
+/*Button Logout*/
 .btn-logout {
   background-color: #B0D9B1;
   color: #2f4f36;
@@ -336,7 +308,7 @@ textarea {
   transform: translateY(-2px);
 }
 
-/* ===== GALLERY PAGE LAYOUT ===== */
+/*Gallery page layout*/
 .page-wrap-alt {
   min-height: 100vh;
   width: 100%;
@@ -344,12 +316,12 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* biar konten mulai dari atas tapi tetap di tengah horizontal */
+  justify-content: flex-start;
   padding: 3rem 1.5rem;
   box-sizing: border-box;
 }
 
-/* 📸 Judul dashboard */
+/*Judul dashboard*/
 .page-heading {
   color: #618264;
   font-size: 2.5rem;
@@ -359,7 +331,7 @@ textarea {
   letter-spacing: 1px;
 }
 
-/* 🔍 Container input + icon */
+/*Container input + icon*/
 .search-container {
   position: relative;
   display: inline-block;
@@ -377,12 +349,12 @@ textarea {
   pointer-events: none;
 }
 
-/* 💚 Input field */
+/*Input field*/
 .search-bar {
   width: 100%;
   border: 2px solid #79AC78;
   border-radius: 9999px;
-  padding: 0.5rem 1rem 0.5rem 2.3rem; /* ruang kiri buat ikon */
+  padding: 0.5rem 1rem 0.5rem 2.3rem;
   background-color: #ffffff;
   color: #2f4f36;
   outline: none;
@@ -395,20 +367,23 @@ textarea {
   box-shadow: 0 0 0 3px #B0D9B1;
 }
 
-/* 🔄 Animasi halus saat muncul */
 .search-container {
   animation: fadeInCenter 0.6s ease;
 }
 
-/* ==== 📂 Tombol Upload File ==== */
+/*Upload Button Wrapper*/
 .upload-btn-wrapper {
   position: relative;
-  display: inline-block;
-  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 100%;
   max-width: 470px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
+/*Input file tetap transparan dan full area tombol*/
 .upload-btn-wrapper input[type="file"] {
   position: absolute;
   left: 0;
@@ -419,53 +394,35 @@ textarea {
   height: 100%;
 }
 
-/* 🎨 Gaya tombol upload */
+/*Button upload*/
 .btn-upload {
   background-color: #618264;
   color: #fff;
-  padding: 0.7rem 1.3rem;
+  padding: 0.9rem 1.3rem;
   border: none;
   border-radius: 0.75rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.4rem;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.btn-upload:hover {
-  background-color: #79AC78;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(97, 130, 100, 0.25);
-}
-
-/* 🧾 Nama file tampil dalam tombol */
-.file-name-inline {
+/*Nama file di dalam button*/
+.btn-upload .file-name-inline {
+  margin-left: 0.5rem;
   font-weight: 500;
   color: #D0E7D2;
-  margin-left: 0.3rem;
-  font-size: 0.95rem;
+  flex: 1;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
-  max-width: 240px; /* biar gak kepanjangan */
-}
-
-
-/* 🎨 Tombol upload (gaya mirip tombol URL) */
-.btn-upload {
-  background-color: #618264;
-  color: #fff;
-  padding: 0.7rem 1.3rem;
-  border: none;
-  border-radius: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .btn-upload:hover {
@@ -474,7 +431,8 @@ textarea {
   box-shadow: 0 4px 10px rgba(97, 130, 100, 0.25);
 }
 
-/* 🧾 Nama file yang dipilih */
+
+/*Nama file yang dipilih*/
 .file-name {
   margin-top: 0.5rem;
   font-size: 0.9rem;
@@ -482,7 +440,13 @@ textarea {
   font-weight: 500;
 }
 
-/* ✂️ Kurangi panjang tombol tambah */
+/*mengurangi panjang button tambah gambar dibagian form*/
 .btn-submit {
-  max-width: 190px; /* dari sebelumnya 470px */
+  max-width: 190px;
+}
+
+/*Deskripsi gambar dalam card*/
+.card-desc {
+  overflow-wrap: break-word;
+  padding-top: -50px;
 }

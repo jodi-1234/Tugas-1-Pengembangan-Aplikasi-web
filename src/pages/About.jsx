@@ -131,7 +131,7 @@ export default function About() {
   return (
     <div className="page-wrap">
       <h1 className="page-title">
-        🗑️ Daftar Foto Terhapus ({username})
+        Daftar Foto Terhapus
       </h1>
 
       {deletedItems.length > 0 && (
@@ -140,7 +140,7 @@ export default function About() {
             onClick={handleRestoreAll}
             className="btn-add"
           >
-            🔁 Pulihkan Semua Foto
+            Pulihkan Semua Foto
           </button>
         </div>
       )}
@@ -173,7 +173,7 @@ export default function About() {
                   onClick={() => handleRestore(item.id)}
                   className="btn-delete"
                 >
-                  🔁 Pulihkan
+                  Pulihkan
                 </button>
               </div>
             </div>

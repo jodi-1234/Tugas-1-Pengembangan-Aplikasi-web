@@ -1,16 +1,16 @@
-/* ====== Container utama ====== */
+/*Container utama*/
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #eaf6ff; 
+  background-color: #D0E7D2; 
   font-family: Arial, sans-serif;
   position: relative;
 }
 
-/* ====== Kotak pembungkus area login ====== */
+/*Kotak pembungkus area login*/
 .login-box {
   background-color: #ffffff;
   border: 2px solid #79AC78;
@@ -28,7 +28,7 @@
   gap: 15px;
 }
 
-/* ====== Judul ====== */
+/*Judul*/
 .login-title{
   font-size: 2.5rem;
   font-weight: bold;
@@ -39,7 +39,7 @@
   gap: 10px;
 }
 
-/* ====== forum ====== */
+/*forum*/
 .login-form{
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   gap: 15px; 
 }
 
-/*  Input Username & Password  */
+/*Input Username & Password */
 .login-input{
   width: 250px;
   padding: 10px;
@@ -58,14 +58,13 @@
   transition: all 0.3s ease;
 }
 
-/* Efek fokus */
 .login-input:focus {
   border-color: #79AC78;
   outline: none;
   box-shadow: 0 0 5px #B0D9B1;
 }
 
-/*  Tombol Login  */
+/*Button Login*/
 .btn-login{
   width: 120px;
   padding: 10px 0;
@@ -79,17 +78,15 @@
   transition: background-color 0.3s ease;
 }
 
-/* ====== Efek Hover Tombol ====== */
 .btn-login:hover{
   background-color: #79AC78;
 }
 
-/* ====== Kotak pembungkus area login ====== */
+/*Kotak pembungkus area login*/
 .login-container {
   position: relative;
 }
 
-/* Bungkus seluruh isi login (judul, form, dll) dalam kotak lembut */
 .login-container::before {
   content: "";
   position: absolute;
@@ -105,13 +102,11 @@
   opacity: 0.9;
 }
 
-/* Pastikan isi login muncul di atas kotak */
 .login-container * {
   position: relative;
   z-index: 1;
 }
 
-/* Terapkan efek kotak ke seluruh isi login */
 .login-container > * {
   z-index: 1;
 }

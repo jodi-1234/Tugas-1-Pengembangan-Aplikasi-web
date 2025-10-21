@@ -1,5 +1,4 @@
 import React from 'react'
-
 export default function GalleryCard({ title, image, category, description, onDelete }) {
   return (
     <div className="card">
