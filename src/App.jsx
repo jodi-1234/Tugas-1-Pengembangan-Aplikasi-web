@@ -7,7 +7,6 @@ import About from './pages/About'
 export default function App() {
   const [username, setUsername] = useState(localStorage.getItem('username') || '')
 
-  // Cek localStorage setiap kali refresh
   useEffect(() => {
     const savedUser = localStorage.getItem('username')
     if (savedUser) {
@@ -21,15 +20,15 @@ export default function App() {
     <Router>
       {/* Navbar hanya muncul kalau sudah login */}
       {username && (
-        <nav className="bg-blue-600 text-white p-4 flex justify-center gap-6">
-          <Link to="/dashboard" className="hover:underline">Gallery</Link>
-          <Link to="/about" className="hover:underline">Foto Terhapus</Link>
+        <nav className="nav-bar">
+          <Link to="/dashboard" className="nav-link">Gallery</Link>
+          <Link to="/about" className="nav-link">Foto Terhapus</Link>
           <button
             onClick={() => {
               localStorage.removeItem('username')
-              window.location.href = '/'  // paksa reload ke login
+              window.location.href = '/'
             }}
-            className="bg-red-500 px-3 py-1 rounded-md hover:bg-red-600"
+            className="btn-logout"
           >
             Logout
           </button>

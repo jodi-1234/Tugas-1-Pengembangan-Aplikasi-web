@@ -177,19 +177,15 @@ export default function Gallery() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white p-8">
-      <h1 className="text-4xl font-extrabold text-center mb-10 text-blue-700">
-        📸 Dashboard {username}
-      </h1>
+    <div className="page-wrap-alt">
+      <h1 className="page-heading">📸 Dashboard {username}</h1>
 
-      <div className="flex flex-wrap justify-center items-center gap-4 mb-10">
+      <div className="filter-wrap">
         {['All', 'Alam', 'Kota', 'Hewan'].map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`px-4 py-2 rounded-full ${
-              filter === cat ? 'bg-blue-600 text-white' : 'bg-white border'
-            }`}
+            className={`filter-btn ${filter === cat ? 'active' : ''}`}
           >
             {cat}
           </button>
@@ -197,25 +193,23 @@ export default function Gallery() {
         <input
           type="text"
           placeholder="Cari gambar..."
-          className="border rounded-full px-4 py-2 outline-none focus:ring-2 focus:ring-blue-400"
+          className="search-bar"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="gallery-grid">
         {filteredItems.map((item) => (
           <GalleryCard key={item.id} {...item} onDelete={() => handleDelete(item.id)} />
         ))}
       </div>
 
-      <div className="mt-16 bg-white/80 shadow-xl p-8 rounded-2xl max-w-xl mx-auto">
-        <h2 className="text-2xl font-semibold mb-5 text-center text-blue-800">
-          🖼️ Tambah Gambar Baru
-        </h2>
-        <div className="space-y-3">
-          <div className="flex items-center space-x-4">
-            <label className="flex items-center">
+      <div className="info-card">
+        <h2 className="info-title">🖼️ Tambah Gambar Baru</h2>
+        <div className="info-list">
+          <div className="info-row">
+            <label className="inline-flex">
               <input
                 type="radio"
                 name="uploadMethod"
@@ -226,9 +220,9 @@ export default function Gallery() {
                   setFile(null)
                 }}
               />
-              <span className="ml-2">Upload dari URL</span>
+              <span className="ml-small">Upload dari URL</span>
             </label>
-            <label className="flex items-center">
+            <label className="inline-flex">
               <input
                 type="radio"
                 name="uploadMethod"
@@ -239,14 +233,14 @@ export default function Gallery() {
                   setNewImage('')
                 }}
               />
-              <span className="ml-2">Upload dari File Lokal</span>
+              <span className="ml-small">Upload dari File Lokal</span>
             </label>
           </div>
 
           <input
             type="text"
             placeholder="Judul"
-            className="border p-3 w-full rounded-lg"
+            className="input-box"
             value={newTitle}
             onChange={(e) => setNewTitle(e.target.value)}
           />
@@ -255,7 +249,7 @@ export default function Gallery() {
             <input
               type="text"
               placeholder="URL gambar"
-              className="border p-3 w-full rounded-lg"
+              className="input-box"
               value={newImage}
               onChange={(e) => setNewImage(e.target.value)}
             />
@@ -271,7 +265,7 @@ export default function Gallery() {
           )}
 
           <select
-            className="border p-3 w-full rounded-lg"
+            className="input-box"
             value={newCategory}
             onChange={(e) => setNewCategory(e.target.value)}
           >
@@ -283,15 +277,12 @@ export default function Gallery() {
           <input
             type="text"
             placeholder="Deskripsi (opsional)"
-            className="border p-3 w-full rounded-lg"
+            className="input-box"
             value={newDesc}
             onChange={(e) => setNewDesc(e.target.value)}
           />
 
-          <button
-            onClick={handleAddItem}
-            className="bg-blue-500 text-white px-5 py-3 rounded-lg w-full hover:bg-blue-600 font-semibold"
-          >
+          <button onClick={handleAddItem} className="btn-submit">
             + Tambah ke Gallery
           </button>
         </div>

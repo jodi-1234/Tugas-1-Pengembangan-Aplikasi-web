@@ -128,16 +128,16 @@ export default function About() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white p-8">
-      <h1 className="text-3xl font-bold text-center mb-6 text-red-700">
+    <div className="page-wrap">
+      <h1 className="page-title">
         🗑️ Daftar Foto Terhapus ({username})
       </h1>
 
       {deletedItems.length > 0 && (
-        <div className="flex justify-center mb-8">
+        <div className="btn-wrap">
           <button
             onClick={handleRestoreAll}
-            className="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition-all font-semibold shadow-md"
+            className="btn-add"
           >
             🔁 Pulihkan Semua Foto
           </button>
@@ -145,32 +145,32 @@ export default function About() {
       )}
 
       {deletedItems.length === 0 ? (
-        <p className="text-center text-gray-500">Belum ada foto yang dihapus.</p>
+        <p className="empty-text">Belum ada foto yang dihapus.</p>
       ) : (
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="card-grid">
           {deletedItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all"
+              className="card"
             >
               {item.image ? (
-                <img src={item.image} alt={item.title} className="w-full h-48 object-cover" />
+                <img src={item.image} alt={item.title} className="card-img" />
               ) : (
-                <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400">
+                <div className="img-placeholder">
                   (gambar tidak tersedia)
                 </div>
               )}
-              <div className="p-4">
-                <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                <p className="text-sm text-gray-600 mb-2">
+              <div className="card-body">
+                <h3 className="card-title">{item.title}</h3>
+                <p className="card-desc">
                   {item.description || 'Tidak ada deskripsi'}
                 </p>
-                <span className="inline-block px-2 py-1 text-xs bg-red-100 text-red-600 rounded-full">
+                <span className="card-tag">
                   {item.category || 'Tanpa Kategori'}
                 </span>
                 <button
                   onClick={() => handleRestore(item.id)}
-                  className="mt-3 block bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600 w-full text-center font-medium"
+                  className="btn-delete"
                 >
                   🔁 Pulihkan
                 </button>

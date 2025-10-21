@@ -29,16 +29,16 @@ export default function Login({ setUsername }) {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-blue-100">
-      <h1 className="text-4xl font-bold text-blue-800 mb-6 flex items-center gap-2">
+    <div className="login-container">
+      <h1 className="login-title">
         <span role="img" aria-label="camera">📷</span> Login Gallery
       </h1>
 
-      <form onSubmit={handleLogin} className="flex flex-col items-center gap-3">
+      <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
           placeholder="Masukkan username"
-          className="border rounded-md px-4 py-2 text-center w-60"
+          className="login-input"
           value={username}
           onChange={(e) => setInputUsername(e.target.value)}
         />
@@ -46,15 +46,12 @@ export default function Login({ setUsername }) {
         <input
           type="password"
           placeholder="Masukkan password"
-          className="border rounded-md px-4 py-2 text-center w-60"
+          className="login-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700"
-        >
+        <button type="submit" className="btn-login">
           Login
         </button>
       </form>
