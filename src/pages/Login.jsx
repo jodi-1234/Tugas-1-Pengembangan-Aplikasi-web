@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './Login.css'
+
 
 export default function Login({ setUsername }) {
   const [username, setInputUsername] = useState('')
@@ -31,7 +33,7 @@ export default function Login({ setUsername }) {
   return (
     <div className="login-container">
       <h1 className="login-title">
-        <span role="img" aria-label="camera">📷</span> Login Gallery
+        <span role="img" aria-label="camera"></span> Login Gallery
       </h1>
 
       <form onSubmit={handleLogin} className="login-form">
